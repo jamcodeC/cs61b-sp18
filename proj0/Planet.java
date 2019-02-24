@@ -30,16 +30,8 @@ public class Planet{
 		return Math.sqrt((this.xxPos - p.xxPos)*(this.xxPos - p.xxPos) + (this.yyPos - p.yyPos)*(this.yyPos - p.yyPos));
 	}
 
-	public boolean equals(Planet p){
-		if(this.calcDistance(p)==0){
-			return true;
-		}else{
-			return false;
-		}
-	}
-
 	public double calcForceExertedBy(Planet p){
-		if (this.equals(p)) {
+		if (this.calcDistance(p)==0) {
 			return 0;		
 		}else{
 		double distance = this.calcDistance(p); 
@@ -49,7 +41,7 @@ public class Planet{
 
 
 	public double calcForceExertedByX(Planet p){
-		if (this.equals(p)) {
+		if (this.calcDistance(p)==0) {
 			return 0;		
 		}else{
 		double distance_x = p.xxPos - this.xxPos;
@@ -58,7 +50,7 @@ public class Planet{
 	    }
 	}
 	public double calcForceExertedByY(Planet p){
-		if (this.equals(p)) {
+		if (this.calcDistance(p)==0) {
 			return 0;		
 		}else{
 		double distance_y = p.yyPos - this.yyPos;
@@ -70,7 +62,7 @@ public class Planet{
 	public double calcNetForceExertedByX(Planet[] planets){
 		double NetForceX = 0.0;
 		for(Planet p:planets){
-			if (this.equals(p)){
+			if (this.calcDistance(p)==0){
 			continue;
 			}else{
 			NetForceX += this.calcForceExertedByX(p);
@@ -82,7 +74,7 @@ public class Planet{
 	public double calcNetForceExertedByY(Planet[] planets){
 		double NetForceY = 0.0;
 		for(Planet p:planets){
-			if (this.equals(p)){
+			if (this.calcDistance(p)==0){
 			continue;
 			}else{
 			NetForceY += this.calcForceExertedByY(p);

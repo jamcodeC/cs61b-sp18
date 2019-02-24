@@ -1,6 +1,6 @@
 public class NBody {
 
-	public static String backGround = "images/starfield.jpg";
+	static String backGround = "images/starfield.jpg";
 
 	public static void main(String[] args){
 
@@ -14,7 +14,6 @@ public class NBody {
 		double radius = NBody.readRadius(filename);
 		Planet[] planets = NBody.readPlanets(filename);
 
-		System.out.println(planets[1].yyPos);//test							
 
 		StdDraw.setScale(-radius, radius);
 
@@ -45,7 +44,6 @@ public class NBody {
 			StdDraw.show();
 			StdDraw.pause(10);
 			t_start += dt;
-			System.out.println(t_start/T);
 			}
 
 		StdOut.printf("%d\n", planets.length);
