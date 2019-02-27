@@ -1,7 +1,3 @@
-import com.sun.source.tree.WhileLoopTree;
-
-import java.time.temporal.WeekFields;
-
 public class LinkedListDeque<Welldone> {
 
     /**declarations */
